@@ -86,6 +86,12 @@ alias txc="nvim ~/.config/tmux/tmux.conf"
 alias wla="nvim ~/.config/wezterm/wezterm.lua"
 alias ila="nvim ~/.config/nvim/init.lua"
 alias c='clear'
+alias t='tmux'
+alias ta='tmux attach-session'
+alias tat='tmux attach-session -t'
+alias tls='tmux ls'
+alias tn='tmux new-session'
+alias tns='tmux new-session -s'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -154,5 +160,15 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # bat
 export BAT_THEME=tokyonight_night
 
-export ANTHROPIC_API_KEY="$(cat ~/.config/anthropic/api_key.txt)"
+# yazi shortcut
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
+export EDITOR=nvim
+export ANTHROPIC_API_KEY="$(cat ~/.config/anthropic/api_key.txt)"
