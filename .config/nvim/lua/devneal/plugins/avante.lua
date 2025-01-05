@@ -5,6 +5,15 @@ return {
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
 		-- add any opts here
+		mappings = {
+			diff = {
+				ours = "<leader>co",
+				theirs = "<leader>ct",
+				all_theirs = "<leader>ca",
+				both = "<leader>cb",
+				cursor = "<leader>cc",
+			},
+		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
