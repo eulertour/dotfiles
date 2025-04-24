@@ -106,6 +106,9 @@ alias tat='tmux attach-session -t'
 alias tls='tmux ls'
 alias tn='tmux new-session'
 alias tns='tmux new-session -s'
+alias bi='bun install'
+alias dev='bun run dev'
+alias build='bun run build'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -186,3 +189,20 @@ function y() {
 
 export EDITOR=nvim
 export ANTHROPIC_API_KEY="$(cat ~/.config/anthropic/api_key.txt)"
+
+# wrapper function for git command
+git() {
+  if [[ "$1" == "log" ]]; then
+    # default to 10 if GIT_LOG_COUNT is not set
+    local count=${GIT_LOG_COUNT:-15}
+    command git log --max-count="$count" "${@:2}"
+  else
+    command git "$@"
+  fi
+}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/devneal/Development/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/devneal/Development/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/devneal/Development/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/devneal/Development/google-cloud-sdk/completion.zsh.inc'; fi
