@@ -34,6 +34,7 @@ zinit light Aloxaf/fzf-tab
 # Add in snippets
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
+zinit snippet OMZP::eza
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 
@@ -44,6 +45,19 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+packages=(
+  fzf
+  ripgrep
+  tmux
+  bat
+  zoxide
+  bash
+)
+
+for package in "${packages[@]}"; do
+    brew list $1 &>/dev/null || brew install $1
+done
 
 # Keybindings
 bindkey -e # bindkey '^f' autosuggest-accept
