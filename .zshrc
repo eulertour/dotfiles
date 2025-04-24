@@ -107,8 +107,8 @@ alias tls='tmux ls'
 alias tn='tmux new-session'
 alias tns='tmux new-session -s'
 alias bi='bun install'
-alias dev='bun run dev'
-alias build='bun run build'
+alias brd='bun run dev'
+alias brb='bun run build'
 
 # Shell integrations
 eval "$(fzf --zsh)"
