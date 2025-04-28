@@ -201,6 +201,9 @@ git() {
   fi
 }
 
+
+function killport() { lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9 }
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/devneal/Development/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/devneal/Development/google-cloud-sdk/path.zsh.inc'; fi
 
