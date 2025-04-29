@@ -1,6 +1,8 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+# https://docs.roocode.com/features/shell-integration#:~:text=terminal%20customization%20tools%3A-,Powerlevel10k,-%3A
+typeset -g POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -106,6 +108,7 @@ alias tat='tmux attach-session -t'
 alias tls='tmux ls'
 alias tn='tmux new-session'
 alias tns='tmux new-session -s'
+alias br='bun run'
 alias bi='bun install'
 alias brd='bun run dev'
 alias brb='bun run build'
