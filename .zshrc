@@ -108,10 +108,12 @@ alias tat='tmux attach-session -t'
 alias tls='tmux ls'
 alias tn='tmux new-session'
 alias tns='tmux new-session -s'
-alias br='bun run'
-alias bi='bun install'
+alias brun='bun run'
+alias ba='bun add'
+alias br='bun remove'
 alias brd='bun run dev'
 alias brb='bun run build'
+alias brt='bun run test'
 
 # Shell integrations
 eval "$(fzf --zsh)"
