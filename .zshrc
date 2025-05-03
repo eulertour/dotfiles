@@ -115,6 +115,8 @@ alias br='bun remove'
 alias brd='bun run dev'
 alias brb='bun run build'
 alias brt='bun run test'
+alias gaucmsg='git add --update && git commit --message '
+alias guam='git add --update && git commit --message '
 
 # Shell integrations
 eval "$(fzf --zsh)"
