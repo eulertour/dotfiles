@@ -117,6 +117,7 @@ alias brb='bun run build'
 alias brt='bun run test'
 alias gaucmsg='git add --update && git commit --message '
 alias guam='git add --update && git commit --message '
+alias yz='yazi'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -185,15 +186,15 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # bat
 export BAT_THEME=tokyonight_night
 
-# yazi shortcut
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+# # yazi shortcut
+# function y() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		builtin cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
 
 export EDITOR=nvim
 export ANTHROPIC_API_KEY="$(cat ~/.config/anthropic/api_key.txt)"

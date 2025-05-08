@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 vim.keymap.set("i", "jj", "<ESC>:w<CR>", { desc = "Exit insert mode and save" })
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 
@@ -25,3 +23,9 @@ vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current t
 vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+vim.keymap.set("n", "g>", "<cmd>tabmove +1<CR>", { desc = "Move current tab right" })
+vim.keymap.set("n", "g<", "<cmd>tabmove -1<CR>", { desc = "Move current tab left" })
+
+vim.keymap.set("n", "<Leader>si", "<cmd>echo 'Keymap triggered!'<CR>", { noremap = true, desc = "Test Keymap" })
+vim.keymap.set("n", "<leader><CR>", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silent = false })
