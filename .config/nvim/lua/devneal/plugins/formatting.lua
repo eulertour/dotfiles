@@ -18,7 +18,7 @@ return {
 			desc = "Toggle autoformat for current buffer",
 		},
 		{
-			"<leader>tF",
+			"<leader>ft",
 			function()
 				-- If autoformat is currently disabled globally,
 				-- then enable it globally, otherwise disable it globally
@@ -66,13 +66,13 @@ return {
 			end,
 		})
 
-		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+		vim.keymap.set({ "n", "v" }, "<leader>fm", function()
 			conform.format({
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 1000,
 			})
-		end, { desc = "Format file or range (in visual mode)" })
+		end, { desc = "Format file or selection manually" })
 
 		vim.api.nvim_create_user_command("FormatDisable", function(args)
 			if args.bang then
