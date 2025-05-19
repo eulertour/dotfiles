@@ -2,13 +2,19 @@ vim.keymap.set("i", "jj", "<ESC>:w<CR>", { desc = "Exit insert mode and save" })
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 
 -- vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear swarch highlights", silent = true })
-vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear swarch highlights", silent = true })
+-- vim.keymap.set("n", "<C-c>", ":NoiceDismiss<CR>", { desc = "Dismiss noice message" })
+vim.keymap.set(
+	"n",
+	"<C-c>",
+	":nohl<CR>:NoiceDismiss<CR>",
+	{ desc = "Clear search highlights and noice messages", silent = true }
+)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines up" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines down" })
 
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
 
 -- windows
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
