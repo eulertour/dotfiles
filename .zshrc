@@ -197,7 +197,7 @@ export BAT_THEME=tokyonight_night
 # }
 
 export EDITOR=nvim
-export ANTHROPIC_API_KEY="$(cat ~/.config/anthropic/api_key.txt)"
+# export ANTHROPIC_API_KEY="$(cat ~/.config/anthropic/api_key.txt)"
 
 # wrapper function for git command
 git() {
@@ -224,3 +224,9 @@ fpath=(/Users/devneal/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/devneal/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export NOTION_API_KEY="$(cat ~/.config/notion/api_key.txt)"
